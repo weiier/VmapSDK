@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" context="width=device-width initial-scale=1.0,user-scalable=no">
+    <meta charset="utf-8">
+	
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<style>
+		body,th{
+			text-align: center;
+		}
+		#crossFloorResultTable {
+			
+			font-size:30px;
+		}
+		.badge{
+			font-size:20px;
+		}
+		#back{
+		
+			font-size:50px;
+		}
+		h1{
+			
+			font-family: "黑体";
+			font-size: 70px;
+			color: #31708F;
+		}
+		.btn-lg{
+			width: 180px;
+			height: 80px;
+			font-size: 40px;
+			margin: 2px;
+		}
+		.btn-danger{
+			font-size: 25px;
+		}
+		
+	</style>
+  </head>
+  
+  <body>
+    <h1>跨楼层导航线路</h1>
+	<table class="table table-striped table-bordered" id="crossFloorResultTable">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>线路简介</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>  
+					   
+		</tbody>
+	</table>
+	<button type="button" class="btn btn-primary btn-block" id="back">返回当前位置</button>
+	
+	<script src="js/mapFunction.js"></script>
+	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/crossFloorNavigation.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" context="width=device-width initial-scale=1.0,user-scalable=no">
+    <meta charset="utf-8">
+	
+    <link rel="stylesheet" type="text/css" href="navi.css">
+	<link href="css/default.css" rel="stylesheet" type="text/css" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	<link href="css/search.css" rel="stylesheet" type="text/css" />
+	<style>
+
+		@font-face {
+			font-family : 'VMapPublic';
+			src : url(./VMapPublic.ttf);
+		}
+	</style>
+  </head>
+  
+  <body>
+	
+	  
+	
+    
+	<div id="mapFrame">
+		<div id="spotName"></div>
+    	<div id="map"></div>
+
+    	<div id="content">
+			<div class="socials">
+				<ul class="reset">
+					<li id="navigation"><a href="#"><img src="img/navigator.png" alt="" /></a></li>
+					<li id="checkSaved"><a href="#"><img src="img/check.png" alt="" /></a></li>
+					<li id="saveSpot"><a href="#"><img src="img/save.png" alt="" /></a></li>
+					<!--<li id="search"><a href="#"><img src="img/search.png" alt="" /></a></li>-->
+				</ul>			
+			</div>		
+	  	</div>
+
+    	<div id="container">		
+			<form action="#" id="search_box">
+				<div class="wrapper">
+					<input type="text" id="search" name="search" placeholder="搜索" />
+					<button type="button" class="search_btn"><img src="img/search_icon.png" title="Search" /></button>
+				</div>
+			</form>
+		</div>
+    </div>
+    
+      
+  </body>
+	<script src="./sdkAPI.js"></script>
+
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/mobilyblocks.js" type="text/javascript"></script>
+	<script src="js/init.js" type="text/javascript"></script>
+	<!--<script src="js/search.js" type="text/javascript"></script>-->
+	<script src="js/mapFunction.js" type="text/javascript"></script>
+	
+</html>

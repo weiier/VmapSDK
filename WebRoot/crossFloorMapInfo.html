@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" context="width=device-width initial-scale=1.0,user-scalable=no">
+    <meta charset="utf-8">
+	
+    <link rel="stylesheet" type="text/css" href="navi.css">
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+	<style>
+
+		@font-face {
+			font-family : 'VMapPublic';
+			src : url(./VMapPublic.ttf);
+		}
+		button{
+			position: absolute;;
+			z-index: 99999;
+			width: 250px;
+			height: 80px;
+			background-color: rgba(215,132,53,0.7);
+			border-radius: 10px;
+			font-size: 30px;
+			bottom: 40px;
+			right: 40px;
+		}
+		/*#big,#small{
+
+			top: 0;
+		}
+		#big{
+			left: 0;
+		}*/
+
+	</style>
+  </head>
+  
+  <body>
+
+	<div id="mapFrame">		
+    	<div id="map"></div>
+    	<button id="back" type="button">返回线路列表</button>
+    	<!-- <button id="big" type="button">放大</button>
+    	<button id="small" type="button">缩小</button> -->
+    </div>
+          
+  </body>
+
+  	<script src="./sdkAPI.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/mapFunction.js"></script>
+	<script src="js/crossFloorMapInfo.js"></script>
+  	
+	
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">	
+<struts>
+	<package name="json" extends="json-default">
+			   <action name="file"  class="com.vmap.action.FileAction">
+	            <result type="json">
+	            	 <param name="root">resultObj</param>
+	            	 <param name="callbackParameter">jsoncallback</param>
+	        	</result>
+	        </action>
+		</package>
+</struts>

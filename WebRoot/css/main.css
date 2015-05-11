@@ -1,0 +1,45 @@
+
+    html,body,div {
+    	margin : 0;
+    	padding : 0;
+    }
+
+    html,body {
+        width : 100%;
+        height : 100%;
+    }
+
+	.facilities_icon{
+		font-weight: normal;
+		font-family: VMapPublic;
+		padding: 0;
+		margin: 0;
+		z-index: 10;
+		line-height: 100%;
+		cursor: default;
+		font-style: normal;
+		position: absolute;
+		color: blue;   
+	}
+
+ 
+    #mapFrame {
+        position : absolute;
+        width : 100%;
+        height : 100%;
+        overflow : hidden;
+		margin: 5px;
+		border-radius: 25px;
+    }
+	#spotName{
+
+		font-family: Segoe UI, Verdana, sans-serif; 
+		position: absolute;
+		border: 3px solid #fe9b00;
+		z-index: 8888;
+		font-size: 40px;
+		font-weight:900;
+		border-radius: 10px;
+	}
+	
+

@@ -1,0 +1,63 @@
+#container { 
+	position: absolute;
+	bottom: 0;
+	margin:0 auto; 
+	width:100%; 
+	z-index: 99999;
+}
+
+#search_box { 
+	
+	background:-moz-linear-gradient(top, #ffd73a, #ffa500); 
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffd73a), to(#ffa500)); 
+	border:1px solid #d28703; 
+	border-radius:5px; 
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px; 
+	-moz-box-shadow:inset 0 1px #ffff90, inset 0 -2px 5px #ffd05d, 0 0 0 4px rgba(255,255,255,0.65);
+	-webkit-box-shadow:inset 0 1px #ffff90, inset 0 -2px 5px #ffd05d, 0 0 0 4px rgba(255,255,255,0.65);
+	padding:9px;
+	width:98.5%;
+	
+}
+
+#search_box .wrapper { 
+	
+	background:#fff; 
+	border:1px solid #d28703;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.3), 0 1px #ff0; 
+	-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.3), 0 1px #ff0; 
+	height:100px;
+	padding-left:10px; 
+	position:relative;
+}
+
+#search_box input,#search_box input:focus { 
+	
+	border:none; 
+	color:#333; 
+	outline:none; 
+	font:bold 55px Helvetica, Arial, sans-serif; 
+	margin:12px 0; 
+	width:90%;
+	height: 60px; 
+}
+#search_box button {
+	
+	background:-moz-linear-gradient(top, #453e26, #000);
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#453e26), to(#000));
+	border:1px solid #000;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-box-shadow:inset 0 -2px 3px #193544, inset 0 1px #907817, 0 1px 1px rgba(0,0,0,4);
+	-webkit-box-shadow:inset 0 -2px 3px #193544, inset 0 1px #907817, 0 1px 1px rgba(0,0,0,.4);
+	cursor:pointer;
+	height:98px; 
+	position:absolute; 
+	right:2px; 
+	top:2px; 
+	width:10%;
+}
+
