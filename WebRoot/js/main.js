@@ -42,7 +42,8 @@ function Vmap( dom, mallId, floorId ) {
 	var initScale = 1;
 	var initAngle = 0;
     var finalAngle = 0;    
-    
+    var deviceAlpha = 0;
+	
     //当前的缩放等级
     var zoomScale = 1;
     //每次缩放增数
@@ -441,7 +442,17 @@ function Vmap( dom, mallId, floorId ) {
                 window.setTimeout(callback, 1000 / 60);
             };
         })();
-    
+	alert(deviceAlpha);
+	window.addEventListener("deviceorientation",function(event) {
+			
+            if( Math.abs(event.alpha - deviceAlpha) > 5 ) {
+				transform.rz = 1;
+				transform.angle = Math.round(event.alpha);
+				finalAngle = Math.round(event.alpha);
+				requestElementUpdate();
+			}
+	});
+	
     //函数绑定
     function bindEvent() {
         var mc = new Hammer.Manager(floorDiv);

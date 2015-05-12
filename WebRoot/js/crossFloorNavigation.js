@@ -2,11 +2,6 @@
 var unit = "e9f6a2de-eadc-45af-a42e-c7458a401339";
 var poi = "37961C5B-7CEA-4A39-912A-A3563B8C3D90";
 
-var publicElement = (function () {
-    this.ip = "10.103.242.71";
-    this.port = "8888";
-    return this;
-})();
 
 $(function(){
 
@@ -27,7 +22,7 @@ function getNavigationPath(fromx,fromy,fromfloor,tox,toy,tofloor){
 	
 	$("#crossFloorResultTable tbody").empty();
 	var tr = "";
-	var url = "http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/file!getXML?pointnum=2&fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor+"&poi="+poi+"&jsoncallback=?";
+	var url = "./file!getXML?pointnum=2&fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor+"&poi="+poi+"&jsoncallback=?";
     $.getJSON(
         url,
         function(result){
@@ -85,7 +80,7 @@ $("#crossFloorResultTable").on('click','button',function(){
 	
 	addCookie("PathPoints", $(this).attr('point')+"@"+$(this).attr('floor'));
 	addCookie("BackTo",location.href);
-	location.href = "http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/crossFloorMapInfo.html";
+	location.href = "./crossFloorMapInfo.html";
 });
 
 $(".btn-primary").bind('click',function(){

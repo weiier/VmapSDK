@@ -8,7 +8,6 @@ function Vmap( dom,mallId,floorId) {
 	//地图信息 
 	var dom = dom;
 	var serverUrl = "123.57.46.160:8080";
-	var localUrl = "10.103.242.71:8888";
     //地图坐标转换 转换公式 当前地图上的位置 = 真实位置(数据服务器返回的位置)*rate/currentScale*finalScale
 	var rate = 96*1000/25.4;// rate = dpi * 1000/25.4;dpi : svg 为96, png为150
 	//当前地图的scale值
@@ -135,7 +134,7 @@ function Vmap( dom,mallId,floorId) {
     
     function changeFloor(floorId) {
         
-        var dataUrl = "http://"+localUrl+"/VmapSDK/file?place="+mallId+"&floor="+floorId+"&jsoncallback=?";
+        var dataUrl = "./file?place="+mallId+"&floor="+floorId+"&jsoncallback=?";
         $.getJSON(dataUrl, function(data){
             if( data.success ) {
                 isPicLoaded = false;

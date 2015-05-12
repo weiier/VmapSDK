@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" context="width=device-width initial-scale=1.0,user-scalable=no">
+    <meta charset="utf-8">
+	<title>SDKforPNG</title>
+    <link rel="stylesheet" type="text/css" href="navi.css">
+  </head>
+  <style>
+    @font-face {
+    font-family : 'VMapPublic';
+    src : url(./VMapPublic.ttf);
+    }
+     html,body {
+    margin : 0;
+    padding : 0;
+    }
+
+    html,body {
+        width : 100%;
+        height : 100%;
+    }
+    input {
+    width : 110px;
+    height: 80px;
+    font-size : 20px;
+    }
+      
+    #helpbox {
+        margin : 0 0 20px;
+        padding : 5px;
+    }
+
+    #map {
+        position : absolute;
+        width : 100%;
+        height :80%;
+        border : 2px dashed blue;
+        overflow : hidden;
+    }
+	.facilities_icon{
+		font-weight: normal;
+		font-family: VMapPublic;
+		padding: 0;
+		margin: 0;
+		z-index: 10;
+		line-height: 100%;
+		cursor: default;
+		font-style: normal;
+		position: absolute;
+		color: blue;   
+	}
+    
+  </style>
+  
+  <body>
+      <div id="helpbox">
+    <input type="button" id="big" value="big">
+    <input type="button" id="small" value="small">
+    <input type="button" id="cl" value="清除">
+    <input type="button" id="destory" value="销毁">
+    <input type="button" id="next" value="上楼">
+    <input type="button" id="prev" value="下楼">
+      </div>  
+    
+    <div id="map">
+    </div>
+    
+      
+  </body>
+    <script src="./sdkAPI.js">
+    </script>
+   
+  <script>
+    window.onload = function () {
+
+    var map = new Vmap(document.getElementById('map'),"e9f6a2de-eadc-45af-a42e-c7458a401339",'');
+	
+	/**
+	var ppp = new VPoint(40,50,"Floor1");
+	var mmm = new VMarker(ppp);
+	console.log(mmm);
+	map.addOverlay(mmm);
+    **/
+	
+	map.onFloorChange = function() {
+		var pp = new VPoint(40,40,"Floor1");
+		var mm = new VMarker(pp);
+		map.addOverlay(mm);
+	}
+	
+	
+    var marker = mark();
+    if(marker!=null) {
+         map.onFloorChange = function(){
+                //map.clearOverlays();
+                var p = new VPoint(marker.x, marker.y, map.getCurrentFloorId());
+                var ma = new VMarker(p,"1111");
+                map.addOverlay(ma);
+
+        }
+    }
+     
+     
+    $("#public").bind("click",map.sf);
+    $("#big").bind("click",map.zoomIn);
+    $("#small").bind("click",map.zoomOut);
+    $("#cl").bind("click",map.clearOverlays);
+    $("#destory").bind("click",map.destory);
+    $("#next").bind("click",map.nextFloor);
+    $("#prev").bind("click",map.prevFloor);
+    $("#rotate").bind("click",map.rotate);
+ 
+    }
+    function mark() {
+        var address = location.href;
+        var result = {};
+        var p1
+        if(address.indexOf('?') > -1 && address.indexOf('&') >-1) {
+            p1 = address.split('?');
+            p2 = p1[1].split('&');
+            p3 = p2[0].split('=');
+            p4 = p2[1].split('=');
+            result.x = p3[1];
+            result.y = p4[1];
+            return result;
+        }
+        return null;
+    }
+    
+  </script>
+ 
+</html>

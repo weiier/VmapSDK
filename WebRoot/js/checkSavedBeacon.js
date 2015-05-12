@@ -132,7 +132,7 @@ $("#BeaconTable ").on('click','button',function(){
             var toy = arr2[1].split("=")[1];
             var tofloor = arr2[3].split("=")[1];
 
-            location.href = "http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/crossFloorNavigation.html?fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor;
+            location.href = "./crossFloorNavigation.html?fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor;
           }
           
         }else if(val = getCookie(key)){
@@ -153,7 +153,7 @@ $("#BeaconTable ").on('click','button',function(){
             var toy = arr2[1].split("=")[1];
             var tofloor = arr2[3].split("=")[1];
             
-            location.href = "http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/crossFloorNavigation.html?fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor;
+            location.href = "./crossFloorNavigation.html?fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor;
           }
           //alert(decodeURIComponent(unescape(val)));
         }else{

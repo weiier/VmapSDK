@@ -1,8 +1,6 @@
 var publicElement = (function () {
 	this.serverIp = "123.57.46.160";
-	this.ip = "10.103.242.71";
 	this.serverPort = "8080";
-	this.port = "8888";
     return this;
 })();
 
@@ -83,7 +81,7 @@ $("#resultTable").on('click','button',function(){
             var toy = arr2[1].split("=")[1];
             var tofloor = arr2[3].split("=")[1];
             
-            location.href = "http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/crossFloorNavigation.html?fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor;
+            location.href = "./crossFloorNavigation.html?fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor;
         }
 		
 	
@@ -152,7 +150,7 @@ $("#resultTable").on('click','button',function(){
             //已存满
             if(confirm("已达存储容量上限，请在已存地点中删除若干\n是否进行删除操作?")){
 
-                location.href="http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
+                location.href="./checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
             }else{
 
                 return;

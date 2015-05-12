@@ -1,10 +1,6 @@
 var MaxSaved = 10;
 var UrlSearch = location.search.split("?")[1];
-var publicElement = (function () {
-    this.ip = "10.103.242.71";
-    this.port = "8888";
-    return this;
-})();
+
 
 window.onload = function () {
 
@@ -41,7 +37,6 @@ $("#search").bind('keypress',function(e){
     }
 });
 
-
 function search(){
 	
 	var spotname = $("#search").val();
@@ -58,7 +53,7 @@ function search(){
 		spotname = encodeURIComponent(spotname);
         unitId = encodeURIComponent(unitId);
         addCookie("HomePage",location.href);
-		location.href="http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/searchResult.html?spotname="+spotname+"&unitId="+unitId+"&backTo="+encodeURIComponent(location.href);
+		location.href="./searchResult.html?spotname="+spotname+"&unitId="+unitId+"&backTo="+encodeURIComponent(location.href);
 	}
 }
 
@@ -187,7 +182,7 @@ function saveSpot(){
             //已存满
             if(confirm("已达存储容量上限，请在已存地点中删除若干\n是否进行删除操作?")){
                 addCookie("HomePage",location.href);
-                location.href="http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
+                location.href="./checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
             }else{
 
                 return;
@@ -207,7 +202,7 @@ function checkSaved(){
         if(ls_amount > 0){
             //alert("ls大于零");
             addCookie("HomePage",location.href);
-            location.href="http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
+            location.href="./checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
             //alert(location.href);
         }else{
 
@@ -221,7 +216,7 @@ function checkSaved(){
             if(cookie_amount > 0){
                 //alert("cookie大于零");
                 addCookie("HomePage",location.href);
-                location.href="http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
+                location.href="./checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
                 //alert(location.href);
             }else{
 
@@ -240,7 +235,7 @@ function navigation(){
     //alert("navigation");
     if(getCookie("BeaconAmount")>0 || localStorage.getItem("BeaconAmount")>0){
         addCookie("HomePage",location.href);
-        location.href = location.href="http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
+        location.href = "./checkSavedBeacon.html?backTo="+encodeURIComponent(location.href);
     }else{
 
         alert("请搜索目标点或通过微信摇一摇保存Beacon位置");
@@ -253,7 +248,7 @@ function navigationPath(fromx,fromy,fromfloor,tox,toy,tofloor,poi,map){
 
     var unit = 'e9f6a2de-eadc-45af-a42e-c7458a401339';//教三的unitId(暂时写死)
 
-    var url = "http://"+publicElement.ip+":"+publicElement.port+"/VmapSDK/file!getXML?pointnum=2&fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor+"&poi="+poi+"&jsoncallback=?";
+    var url = "./file!getXML?pointnum=2&fromx="+fromx+"&fromy="+fromy+"&fromfloor="+fromfloor+"&tox="+tox+"&toy="+toy+"&tofloor="+tofloor+"&poi="+poi+"&jsoncallback=?";
         $.getJSON(
             url,
             function(result){

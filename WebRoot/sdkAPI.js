@@ -1,4 +1,4 @@
-﻿function PScript(src) {
+function PScript(src) {
     document.write('<' + 'script src="' + src + '"' + ' type="text/javascript"><' + '/script>');
 }
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SDKforSVG</title>
+	<style>
+        @font-face {
+            font-family : 'VMapPublic';
+            src : url(./VMapPublic.ttf);
+        }
+		#hitarea{
+			left:0px;
+			top:0px;
+		}
+        .facilities_icon{
+            font-weight: normal;
+            font-family: VMapPublic;
+            padding: 0;
+            margin: 0;
+            z-index: 10;
+            line-height: 100%;
+            cursor: default;
+            font-style: normal;
+            position: absolute;
+            color: blue;   
+        }
+	</style>
+</head>
+    <body>  
+  					<div id="hitarea">
+					</div>
+				
+	<button id="zoomIn" style="float:right">zoomIn</button>
+	<button id="zoomOut" style="float:right">zoomOut</button>
+	<button id="point" style="float:right">point</button>
+	<button id="line" style="float:right">line</button>
+	<button id="name" style="float:right">name</button>
+	<button id="floor" style="float:right">getCurrentFloorId</button><br/><br/>
+	<button id="changefloor3" style="float:right">floor3</button>
+	<button id="changefloor1" style="float:right">floor1</button>
+	<button id="getfloor" style="float:right">getFloors</button>
+	<button id="destory" style="float:right">destory</button>
+	<button id="toggleFacilities" style="float:right">toggleFacilities</button>
+<script src="sdkAPI.js"></script>
+<script>
+	window.onload = function() {
+		var test = document.querySelector("#hitarea");
+		var map = new Vmap(test,"0AC8A51B-7A1C-49CE-9033-787852460F93");
+		document.querySelector("#zoomIn").onclick = map.zoomIn;
+		document.querySelector("#zoomOut").onclick = map.zoomOut;
+		document.querySelector("#destory").onclick = map.destory;
+		document.querySelector("#name").onclick = function() {
+            alert(map.getMallName());
+        } 
+		document.querySelector("#floor").onclick = function() {
+            alert(map.getCurrentFloorId());
+        }
+		document.querySelector("#changefloor1").onclick = function() {
+            map.changeFloor("Floor1");
+        }
+        document.querySelector("#changefloor3").onclick = function() {
+            map.changeFloor("Floor3");
+        }
+        document.querySelector("#getfloor").onclick = function() {
+            alert(map.getFloors()[0].floor_id);
+        }
+		document.querySelector("#toggleFacilities").onclick = map.toggleFacilities;
+		document.querySelector("#point").onclick = function() {
+			var point = new VPoint(50.436,18.961,"Floor1");
+			var ma = new VMarker(point);
+			map.addOverlay(point);
+			map.addOverlay(ma);
+		}
+		
+		document.querySelector("#line").onclick = function() {
+			var p1 = new VPoint(50.436,18.961,"Floor1");
+			var p2 = new VPoint(46.066,95.386,"Floor1");
+			var p3 = new VPoint(66.431,98.327,"Floor1");
+			var points = [p1,p2,p3];
+			var line = new VPolyline(points);
+			map.addOverlay(line);
+		}
+	}
+</script>
+</body>
+</html>
