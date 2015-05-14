@@ -417,7 +417,7 @@ function Vmap( dom,mallId,floorId) {
                     transform.rz = 1;
                     transform.angle = Math.round(event.alpha);
                     finalAngle = Math.round(event.alpha);
-                    requestElementUpdate();
+                    updateElementTransform();
                 //}
         });
 
@@ -489,7 +489,7 @@ function Vmap( dom,mallId,floorId) {
                 svgCircle.setAttribute("fill","none");
                 svgCircle.setAttribute("stroke",obj.color());
                 svgCircle.setAttribute("r",obj.radius() * delta );
-                svgCircle.setAttribute("cx",obj.point().x * delta -10);
+                svgCircle.setAttribute("cx",obj.point().x * delta -5);
                 svgCircle.setAttribute("cy",obj.point().y * delta );
                 svgOverlay.appendChild(svgCircle);
 			}

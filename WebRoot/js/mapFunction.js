@@ -76,6 +76,7 @@ function search(){
         floorId1 = args["floor"];
 
         map = new Vmap(document.getElementById('map'),unitId1,floorId1);
+        map.rotate();
         map.onFloorChange = function(){
             
         map.clearOverlays();
