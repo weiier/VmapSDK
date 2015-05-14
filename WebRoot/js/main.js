@@ -580,7 +580,6 @@ function Vmap( dom, mallId, floorId ) {
 	
 	//随手机旋转
     function rotate() {
-        alert("开启旋转:"+deviceAlpha);
         window.addEventListener("deviceorientation",function(event) {
                 //if( Math.abs(event.alpha - deviceAlpha) > 5 ) {
                     transform.rz = 1;
