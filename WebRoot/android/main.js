@@ -488,9 +488,9 @@ function Vmap( dom,mallId,floorId) {
 				var svgCircle = svgDocument.createElementNS("http://www.w3.org/2000/svg","circle");
                 svgCircle.setAttribute("fill","none");
                 svgCircle.setAttribute("stroke",obj.color());
-                svgCircle.setAttribute("r",obj.radius * delta );
-                svgCircle.setAttribute("cx",obj.point.x * delta );
-                svgCircle.setAttribute("cy",obj.point.y * delta );
+                svgCircle.setAttribute("r",obj.radius() * delta );
+                svgCircle.setAttribute("cx",obj.point().x * delta -10);
+                svgCircle.setAttribute("cy",obj.point().y * delta );
                 svgOverlay.appendChild(svgCircle);
 			}
 		}

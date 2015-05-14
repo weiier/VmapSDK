@@ -15,7 +15,7 @@ _Vmapi_url = (function () {
 				return script[i].src.replace(/sdkAPI.js/, "android");
 			}else{
 				console.log(script[i].src);
-				return script[i].src.replace(/sdkAPI.js/, "js");/*file:\/\/\/.*/
+				return script[i].src.replace(/sdkAPI.js/, "android");/*file:\/\/\/.*/
 			}
         }
     }
