@@ -86,7 +86,9 @@ function search(){
 
         pointer = new VPoint(fromx, fromy, fromfloor);
         marker = new VMarker(pointer,1);
+		circle = new VCircle(pointer,5);
         map.addOverlay(marker);
+		map.addOverlay(circle);
             //alert(document.cookie);
             //alert("BeaconMarker:"+getCookie("BeaconMarker"));
         if(BeaconMarker = getCookie("BeaconMarker")){
@@ -119,7 +121,9 @@ function search(){
 
                     pointer = new VPoint(args["x"], args["y"], floorId2);
                     marker = new VMarker(pointer,2);
+					circle = new VCircle(pointer,5);
                     map.addOverlay(marker);
+					map.addOverlay(circle);
                     navigationPath(fromx,fromy,fromfloor,tox,toy,tofloor,poi,map);
                     deleteCookie("BeaconMarker");
                 /*}*/
