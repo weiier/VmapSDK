@@ -442,9 +442,9 @@ function Vmap( dom, mallId, floorId ) {
                 window.setTimeout(callback, 1000 / 60);
             };
         })();
+    
 	alert(deviceAlpha);
 	window.addEventListener("deviceorientation",function(event) {
-			
             if( Math.abs(event.alpha - deviceAlpha) > 5 ) {
 				transform.rz = 1;
 				transform.angle = Math.round(event.alpha);

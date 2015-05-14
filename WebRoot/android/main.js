@@ -463,6 +463,19 @@ function Vmap( dom,mallId,floorId) {
                 svgOverlay.appendChild(svgLine);
             }
 		}
+		
+		if( obj.type() == "circle" ){
+			circles[circles.length] = obj;
+			if( obj.floorIndex() === currentFloorId ){
+				var svgCircle = svgDocument.createElementNS("http://www.w3.org/2000/svg","circle");
+                svgCircle.setAttribute("fill","none");
+                svgCircle.setAttribute("stroke",obj.color());
+                svgCircle.setAttribute("r",obj.radius * delta );
+                svgCircle.setAttribute("cx",obj.point.x * delta );
+                svgCircle.setAttribute("cy",obj.point.y * delta );
+                svgOverlay.appendChild(svgCircle);
+			}
+		}
 	}
     
     function refreshOverLay(oScale) {
