@@ -442,16 +442,6 @@ function Vmap( dom, mallId, floorId ) {
                 window.setTimeout(callback, 1000 / 60);
             };
         })();
-    
-	alert(deviceAlpha);
-	window.addEventListener("deviceorientation",function(event) {
-            if( Math.abs(event.alpha - deviceAlpha) > 5 ) {
-				transform.rz = 1;
-				transform.angle = Math.round(event.alpha);
-				finalAngle = Math.round(event.alpha);
-				requestElementUpdate();
-			}
-	});
 	
     //函数绑定
     function bindEvent() {
@@ -586,6 +576,20 @@ function Vmap( dom, mallId, floorId ) {
         draw();
         event.preventDefault();//
         return false;
+    }
+	
+	//随手机旋转
+    function rotate() {
+        alert("开启旋转:"+deviceAlpha);
+        window.addEventListener("deviceorientation",function(event) {
+                //if( Math.abs(event.alpha - deviceAlpha) > 5 ) {
+                    transform.rz = 1;
+                    transform.angle = Math.round(event.alpha);
+                    finalAngle = Math.round(event.alpha);
+                    requestElementUpdate();
+                //}
+        });
+
     }
 	
 	function destory() {
@@ -825,8 +829,8 @@ function Vmap( dom, mallId, floorId ) {
     this.changePublicType = changePublicType;
     this.transform = transform;
     this.getRealPoint = getRealPoint;
-	  this.destory = destory;
-
+	this.destory = destory;
+	this.rotate = rotate;
     //补充接口
     //整个数据结构是否初始化完成
     this.isLoaded = function () {

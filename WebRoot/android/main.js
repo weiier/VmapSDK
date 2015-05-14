@@ -32,6 +32,7 @@ function Vmap( dom,mallId,floorId) {
 	//旋转
 	var initAngle = 0;
 	var finalAngle = 0;
+	var deviceAlpha = 0;
 	//覆盖物
 	var points = [];
 	var markers = [];
@@ -406,6 +407,23 @@ function Vmap( dom,mallId,floorId) {
         zoom(finalScale);
 		return false;
 	}
+	
+	 
+     //随手机旋转
+    function rotate() {
+        alert("开启旋转:"+deviceAlpha);
+        window.addEventListener("deviceorientation",function(event) {
+                //if( Math.abs(event.alpha - deviceAlpha) > 5 ) {
+                    transform.rz = 1;
+                    transform.angle = Math.round(event.alpha);
+                    finalAngle = Math.round(event.alpha);
+                    requestElementUpdate();
+                //}
+        });
+
+    }
+    
+	
 	//添加覆盖物
 	function addOverlay ( obj ) {
 		if( svgOverlay == null) {
@@ -558,5 +576,5 @@ function Vmap( dom,mallId,floorId) {
     this.getMallName = getMallName;
     this.getCurrentFloorId = getCurrentFloorId;
     this.getFloors = getFloors;
-    
+    this.rotate = rotate;
 }
